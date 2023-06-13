@@ -12,9 +12,9 @@ switch(color){
     case "green":
         console.log("this color is green");
         break;
-        case "red":
-            console.log("this color is red");
-            break;
-            default:
-                console.log("This color is unknown");
+    case "red":
+        console.log("this color is red");
+        break;
+    default:
+        console.log("This color is unknown");
 }
