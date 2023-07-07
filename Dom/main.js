@@ -83,20 +83,41 @@ document.querySelector()
 // */
 // console.log(result);
 
-// <!-- class 4 create new dom element-->
-const listItem=document.createElement('li');
-/* Add Class Name */
-listItem.className='list-group-item d-flex justify-content-between align-items-center';
-/* Add id */
-listItem.id='biplab-item';
-/* Add attribute */
-listItem.setAttribute('title','New Task List');
+// // <!-- class 4 create new dom element-->
+// const listItem=document.createElement('li');
+// /* Add Class Name */
+// listItem.className='list-group-item d-flex justify-content-between align-items-center';
+// /* Add id */
+// listItem.id='biplab-item';
+// /* Add attribute */
+// listItem.setAttribute('title','New Task List');
 
-/* create  text node and append */
-listItem.appendChild(document.createTextNode('Biplab Uddin'));
-document.querySelector('ul.list-group').appendChild(listItem);
-const link=document.createElement('a');
-link.className='delete-item secondary-content';
-link.innerHTML='<i class="fa-solid fa-xmark"></i>';
-listItem.appendChild(link);
-console.log(listItem);
+// /* create  text node and append */
+// listItem.appendChild(document.createTextNode('Biplab Uddin'));
+// document.querySelector('ul.list-group').appendChild(listItem);
+// const link=document.createElement('a');
+// link.className='delete-item secondary-content';
+// link.innerHTML='<i class="fa-solid fa-xmark"></i>';
+// listItem.appendChild(link);
+// console.log(listItem);
+
+//<!-- class 5 replace and removing element from dom -->
+
+//Create New element
+let newTitle=document.createElement('h3');
+newTitle.className='new-title text-center';
+newTitle.id='task-title';
+newTitle.appendChild(document.createTextNode('New Title'));
+
+const oldElement=document.querySelector('.card-title');
+const oldElementParent=oldElement.parentElement;
+oldElementParent.replaceChild(newTitle,oldElement);
+console.log(oldElement);
+
+//remove element
+const list=document.querySelector('ul');
+const listItem=document.querySelectorAll('li');
+//listItem[0].remove();
+list.removeChild(listItem[3]);
+listItem[1].classList.add('bg-danger');
+listItem[1].classList.remove('bg-danger');
