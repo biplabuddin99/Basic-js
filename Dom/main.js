@@ -58,28 +58,45 @@ document.querySelector()
 // })
 //list[0].style.color='red';
 
-// <--domClass 03 -->
+// // <--domClass 03 -->
+// let result;
+// const list=document.querySelector('ul.list-group');
+// // const listItem=document.querySelector('li.list-group-item');
+// // result=listItem.children;
+// // result=listItem.childNodes[0].nodeType;
+// result=list.children[3].children[0].id='biplab-list';
+// result =list.firstElementChild;
+// result=list.lastElementChild;
 
-let result;
-const list=document.querySelector('ul.list-group');
-// const listItem=document.querySelector('li.list-group-item');
-// result=listItem.children;
-// result=listItem.childNodes[0].nodeType;
-result=list.children[3].children[0].id='biplab-list';
-result =list.firstElementChild;
-result=list.lastElementChild;
+// result=list.parentNode;
+// result=list.nextElementSibling;
+// result=list.previousElementSibling;
+// /*
+// value:
+// 1-element;
+// 2-attribute(dep);
+// 3-taxt node;
+// 8-comment;
+// 9-document itself;
+// 10-Doctype;
 
-result=list.parentNode;
-result=list.nextElementSibling;
-result=list.previousElementSibling;
-/*
-value:
-1-element;
-2-attribute(dep);
-3-taxt node;
-8-comment;
-9-document itself;
-10-Doctype;
+// */
+// console.log(result);
 
-*/
-console.log(result);
+// <!-- class 4 create new dom element-->
+const listItem=document.createElement('li');
+/* Add Class Name */
+listItem.className='list-group-item d-flex justify-content-between align-items-center';
+/* Add id */
+listItem.id='biplab-item';
+/* Add attribute */
+listItem.setAttribute('title','New Task List');
+
+/* create  text node and append */
+listItem.appendChild(document.createTextNode('Biplab Uddin'));
+document.querySelector('ul.list-group').appendChild(listItem);
+const link=document.createElement('a');
+link.className='delete-item secondary-content';
+link.innerHTML='<i class="fa-solid fa-xmark"></i>';
+listItem.appendChild(link);
+console.log(listItem);
