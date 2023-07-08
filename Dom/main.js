@@ -101,23 +101,47 @@ document.querySelector()
 // listItem.appendChild(link);
 // console.log(listItem);
 
-//<!-- class 5 replace and removing element from dom -->
 
-//Create New element
-let newTitle=document.createElement('h3');
-newTitle.className='new-title text-center';
-newTitle.id='task-title';
-newTitle.appendChild(document.createTextNode('New Title'));
+// //<!-- class 5 replace and removing element from dom -->
+// //Create New element
+// let newTitle=document.createElement('h3');
+// newTitle.className='new-title text-center';
+// newTitle.id='task-title';
+// newTitle.appendChild(document.createTextNode('New Title'));
 
-const oldElement=document.querySelector('.card-title');
-const oldElementParent=oldElement.parentElement;
-oldElementParent.replaceChild(newTitle,oldElement);
-console.log(oldElement);
+// const oldElement=document.querySelector('.card-title');
+// const oldElementParent=oldElement.parentElement;
+// oldElementParent.replaceChild(newTitle,oldElement);
+// console.log(oldElement);
 
-//remove element
-const list=document.querySelector('ul');
-const listItem=document.querySelectorAll('li');
-//listItem[0].remove();
-list.removeChild(listItem[3]);
-listItem[1].classList.add('bg-danger');
-listItem[1].classList.remove('bg-danger');
+// //remove element
+// const list=document.querySelector('ul');
+// const listItem=document.querySelectorAll('li');
+// //listItem[0].remove();
+// list.removeChild(listItem[3]);
+// listItem[1].classList.add('bg-danger');
+// listItem[1].classList.remove('bg-danger');
+
+
+ //<!-- class 6  Event Listener -->
+ const btn=document.querySelector('#addButton');
+//  btn.addEventListener('click',function(){
+
+//      console.log('Event Triggerd');
+//  });
+//  btn.addEventListener('click',onClick);
+//  function onClick(){
+//     console.log('Events Triggered');
+//  }
+
+btn.addEventListener('click',(event)=>{
+    console.log(
+        event.target.id, 
+        event.target.className,
+        event.target.classList,
+        event.type,
+        event.timeStamp,
+        event.clientX,event.clientY,
+        event.offsetX,event.offsetY);
+    event.preventDefault();
+});
