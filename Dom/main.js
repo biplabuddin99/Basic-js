@@ -123,25 +123,52 @@ document.querySelector()
 // listItem[1].classList.remove('bg-danger');
 
 
- //<!-- class 6  Event Listener -->
- const btn=document.querySelector('#addButton');
-//  btn.addEventListener('click',function(){
+//  //<!-- class 6  Event Listener -->
+//  const btn=document.querySelector('#addButton');
+// //  btn.addEventListener('click',function(){
 
-//      console.log('Event Triggerd');
-//  });
-//  btn.addEventListener('click',onClick);
-//  function onClick(){
-//     console.log('Events Triggered');
-//  }
+// //      console.log('Event Triggerd');
+// //  });
+// //  btn.addEventListener('click',onClick);
+// //  function onClick(){
+// //     console.log('Events Triggered');
+// //  }
 
-btn.addEventListener('click',(event)=>{
-    console.log(
-        event.target.id, 
-        event.target.className,
-        event.target.classList,
-        event.type,
-        event.timeStamp,
-        event.clientX,event.clientY,
-        event.offsetX,event.offsetY);
-    event.preventDefault();
+// btn.addEventListener('click',(event)=>{
+//     console.log(
+//         event.target.id, 
+//         event.target.className,
+//         event.target.classList,
+//         event.type,
+//         event.timeStamp,
+//         event.clientX,event.clientY,
+//         event.offsetX,event.offsetY);
+//     event.preventDefault();
+// });
+
+
+const btn=document.querySelector('#addButton');
+
+// btn.addEventListener('dblclick',(e)=>{
+// console.log(e.type);
+// });
+
+// btn.addEventListener('mouseenter',(e)=>{
+// console.log(e.type);
+// });
+
+// btn.addEventListener('mouseleave',(e)=>{
+// console.log(e.type);
+// });
+
+// btn.addEventListener('mouseover',(e)=>{
+// console.log(e.type);
+// });
+
+const title=document.querySelector('#t-title');
+btn.addEventListener('mousemove',(e)=>{
+    title.textContent=`X:${e.offsetX}; Y:${e.offsetY};`
+    title.style.color='#ddd';
+    title.style.backgroundColor=`rgb(${e.offsetX},${e.offsetY},200)`
+console.log(e.type);
 });
