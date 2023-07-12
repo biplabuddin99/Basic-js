@@ -1,21 +1,33 @@
 /*  get the button */ 
 const btn=document.getElementById('button');
+
 //console.log("button");
 btn.addEventListener('click',loadData);
 
 function loadData(){
+
     /*  create XHR Object  */
     const xhr=new XMLHttpRequest();
+
  /* panel setup/open port */
-    xhr.open('GET','data.txt',true);
-    /* run when data load */
-    xhr.onprogress=function(){
-        console.log('RedadyStates',xhr.readyState);
-    }
+    xhr.open('GET','posts.json',true);
+
     xhr.onload=function(){
         console.log(xhr.readyState);
         if(this.status==200){
-            console.log(this.responseText);
+            const posts=JSON.parse(this.responseText);
+            let output='';
+            posts.forEach(post =>{
+                 output+=`
+                <ul>
+                <li>ID: ${posts.id}</li>
+                <li>Title: ${posts.title}</li>
+                <li>Body: ${posts.body}</li>
+                <li>User ID: ${posts.userId}</li>
+                </ul>
+                `;
+            });
+            document.getElementById('posts').innerHTML=output;
         }
     }
 
