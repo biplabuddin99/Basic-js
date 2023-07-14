@@ -31,7 +31,9 @@ btnJSON.addEventListener('click',()=>{
             `;
         });
         post.innerHTML=output;
-    });
+    }).catch((err)=>{
+        console.log(err);
+    })
 });
 
 btnAPI.addEventListener('click',()=>{
@@ -50,5 +52,7 @@ btnAPI.addEventListener('click',()=>{
             `
         });
         post.innerHTML=output;
+    }).catch((err)=>{
+        console.log(err);
     })
 })
