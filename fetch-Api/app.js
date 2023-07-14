@@ -31,5 +31,24 @@ btnJSON.addEventListener('click',()=>{
             `;
         });
         post.innerHTML=output;
+    });
+});
+
+btnAPI.addEventListener('click',()=>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((res)=>{
+        console.log(res);
+        return res.json();
+    }).then((data)=>{
+        console.log(data);
+        let output='';
+        data.forEach((todo)=>{
+            output+=`
+            <li>${todo.id}</li>
+            <li>${todo.title}</li>
+            <li>${todo.userId}</li>
+            `
+        });
+        post.innerHTML=output;
     })
 })
